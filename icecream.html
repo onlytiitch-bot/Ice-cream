@@ -1,0 +1,201 @@
+<!-- POCKET LAUNCH CLIENT GREETING - Use this to message owner:
+Hey, Pocket Launch here 👋 We managed to save your number from your ice cream truck the other day, we noticed you don't have a website yet where people can book you for birthdays & events online. So we quickly mocked up a preview for you - no charge, just wanted to show you what it could look like. Let me know if you'd like to see it? -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SWEET WHEELS — The Truck That Pulls Up With The Party | Pretoria</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;800&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<script>tailwind.config={theme:{extend:{colors:{cream:'#FFF9ED',ink:'#17120F',straw:'#FF4D6D',mint:'#B9FBC0',banana:'#FFD60A'},fontFamily:{jakarta:['Plus Jakarta Sans'],serif:['Instrument Serif'],inter:['Inter'],hand:['Caveat']}}}}</script>
+<style>
+*{font-family:'Inter',sans-serif}
+.serif{font-family:'Instrument Serif',serif}
+.hand{font-family:'Caveat',cursive}
+html{scroll-behavior:smooth}
+.reveal{opacity:0;transform:translateY(28px) rotate(.6deg);transition:all.75s cubic-bezier(0.16,1,0.3,1)}
+.reveal.in{opacity:1;transform:translateY(0) rotate(0)}
+.lift{transition:transform.6s cubic-bezier(0.16,1,0.3,1),box-shadow.3s}
+.lift:hover{transform:translateY(-6px) rotate(-.5deg) scale(1.02);box-shadow:0 24px 40px -16px rgba(23,18,15,.22)}
+.tape{position:absolute;width:72px;height:22px;background:rgba(255,255,255,.85);backdrop-filter:blur(2px);box-shadow:0 2px 6px rgba(0,0,0,.1)}
+.marquee{white-space:nowrap;overflow:hidden}
+.marquee-track{display:inline-flex;animation:marquee 22s linear infinite}
+@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+@keyframes drip{0%,100%{transform:scaleY(1)}50%{transform:scaleY(1.15)}}
+.loader-bar{width:0;animation:load 2.2s cubic-bezier(0.16,1,0.3,1) forwards}
+@keyframes load{to{width:100%}}
+.ticket{border:1.5px dashed #17120F;position:relative;background:white}
+.ticket:before{content:'';position:absolute;left:-8px;top:50%;width:16px;height:16px;background:#FFF9ED;border-radius:50%;border:1.5px dashed #17120F}
+.chalk{background:#17120F;background-image:radial-gradient(rgba(255,255,255,.06) 1px, transparent 1px);background-size:22px 22px}
+</style>
+</head>
+<body class="bg-cream text-ink antialiased overflow-x-hidden selection:bg-straw selection:text-white">
+
+<!-- LOADER -->
+<div id="loader" class="fixed inset-0 z-[999] bg-cream flex flex-col items-center justify-center">
+  <div class="text-[84px] leading-none" style="animation:drip 1.1s infinite">🍦</div>
+  <div class="mt-6 w-[220px] h-[6px] bg-ink/10 rounded-full overflow-hidden"><div class="loader-bar h-full bg-straw rounded-full"></div></div>
+  <p id="lt" class="mt-4 hand text-[22px] -rotate-1">Firing up the freezer...</p>
+  <p class="mt-20 text-[10px] tracking-[0.25em] text-ink/30 font-jakarta uppercase">POCKET LAUNCH — FROM IDEA TO WEBAPP</p>
+</div>
+
+<nav class="sticky top-0 z-40 bg-cream/80 backdrop-blur-xl border-b border-ink/10">
+  <div class="max-w-7xl mx-auto px-6 h-[72px] flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <span class="serif text-[22px] font-[400] tracking-tight">SWEET WHEELS</span>
+      <svg width="54" height="8" viewBox="0 0 54 8" class="-ml-1 mt-3"><path d="M2 5 Q 10 1, 18 4 T 34 4 T 52 5" stroke="#FF4D6D" stroke-width="2.2" fill="none" stroke-linecap="round"/></svg>
+      <span class="hidden md:inline text-[10px] font-bold tracking-widest bg-ink text-cream px-2 py-1 rounded-full ml-2">PTA • SINCE 2021</span>
+    </div>
+    <div class="flex items-center gap-3">
+      <span class="hidden md:block text-[11px] tracking-widest font-bold opacity-60">PRETORIA • CENTURION • MIDRAND</span>
+      <a href="#book" class="bg-ink text-cream px-5 py-2.5 rounded-full text-[13px] font-bold hover:bg-black transition">Book the truck</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="max-w-7xl mx-auto px-6 pt-10 lg:pt-16 pb-12 grid lg:grid-cols-[1.1fr_.9fr] gap-10 items-center">
+  <div class="reveal">
+    <div class="inline-flex rotate-[-1.3deg] items-center gap-2 bg-banana border-2 border-ink px-3 py-1 rounded-full text-[11px] font-bold tracking-widest shadow-[2px_2px_0_#17120F]">YES, WE STILL PLAY THE JINGLE 🔊</div>
+    <h1 class="serif text-[46px] lg:text-[72px] leading-[0.9] mt-5">The truck that makes the <span class="relative inline-block"><span class="relative z-10">whole street</span><span class="absolute bottom-2 left-0 w-full h-[14px] bg-mint -rotate-1 -z-0"></span></span> run outside.</h1>
+    <p class="mt-5 text-[16px] lg:text-[18px] leading-7 text-ink/60 max-w-[500px]">Not just ice cream. It's that moment when 20 kids sprint to the gate when they hear us turn the corner. Pretoria's most booked birthday surprise.</p>
+    <div class="mt-7 flex flex-wrap gap-3">
+      <a href="#book" class="bg-ink text-cream px-7 py-3.5 rounded-full font-bold text-[14px] flex items-center gap-2 lift">Check if we're free <span>→</span></a>
+      <a href="https://wa.me/27800000000" class="border-2 border-ink px-7 py-3.5 rounded-full font-bold text-[14px] bg-white lift">Hear the jingle 🔊</a>
+    </div>
+    <div class="mt-8 flex items-center gap-4">
+      <div class="flex -space-x-3"><img src="https://i.pravatar.cc/300?img=15" class="w-9 h-9 rounded-full border-2 border-cream"><img src="https://i.pravatar.cc/300?img=32" class="w-9 h-9 rounded-full border-2 border-cream"><img src="https://i.pravatar.cc/300?img=12" class="w-9 h-9 rounded-full border-2 border-cream"></div>
+      <p class="text-[12px] leading-tight"><b>250+ streets</b> pulled up on<br><span class="hand text-[16px]">★★★★★ 4.9 — parents actually text back</span></p>
+    </div>
+  </div>
+  <div class="relative reveal lg:h-[560px]">
+    <div class="relative bg-white p-3 pb-12 rounded-[24px] border-2 border-ink rotate-[2deg] shadow-[8px_8px_0_#17120F] overflow-hidden lift">
+      <div class="tape -top-2 left-10 rotate-[-12deg]"></div><div class="tape -bottom-1 right-12 rotate-[8deg]"></div>
+      <img src="https://images.unsplash.com/photo-1576506295286-5cda18df43e7?w=900" class="w-full h-[420px] object-cover rounded-[16px]">
+      <p class="hand text-[18px] mt-3 ml-2">Our actual truck — no stock truck, this one.</p>
+    </div>
+    <div class="absolute -bottom-6 -left-4 lg:bottom-10 lg:-left-10 bg-white border-2 border-ink p-2 rotate-[-6deg] shadow-[6px_6px_0_#17120F] w-[220px] lift">
+      <img src="https://images.unsplash.com/photo-1560008581-09826d1de69e?w=800" class="w-full h-[160px] object-cover">
+      <p class="hand text-[16px] mt-2 leading-none">Lynnwood — 37 kids, 0 leftovers 🍦</p>
+      <p class="text-[10px] uppercase tracking-widest opacity-60 mt-1">last Saturday • 2pm</p>
+    </div>
+    <div class="absolute -top-4 -right-2 bg-ink text-banana border-2 border-ink px-4 py-2 rounded-full rotate-[3deg] shadow-[4px_4px_0_#17120F] font-jakarta font-extrabold text-[12px] tracking-widest">FROM R1,200 — WE COME TO YOU</div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee bg-ink text-cream py-3 border-y-2 border-ink">
+  <div class="marquee-track font-jakarta font-extrabold text-[14px] tracking-widest">
+    <span class="flex items-center gap-6 px-6">BUBBLEGUM <span class="w-1.5 h-1.5 bg-straw rounded-full"></span> VANILLA BEAN <span class="w-1.5 h-1.5 bg-straw rounded-full"></span> CHOC CHIP <span class="w-1.5 h-1.5 bg-straw rounded-full"></span> STRAWBERRY <span class="w-1.5 h-1.5 bg-straw rounded-full"></span> OREO CRUSH <span class="w-1.5 h-1.5 bg-straw rounded-full"></span> MANGO SORBET <span class="w-1.5 h-1.5 bg-straw rounded-full"></span> BLUE BUBBLE <span class="w-1.5 h-1.5 bg-straw rounded-full"></span></span>
+    <span class="flex items-center gap-6 px-6">BUBBLEGUM <span class="w-1.5 h-1.5 bg-straw rounded-full"></span> VANILLA BEAN <span class="w-1.5 h-1.5 bg-straw rounded-full"></span> CHOC CHIP <span class="w-1.5 h-1.5 bg-straw rounded-full"></span> STRAWBERRY <span class="w-1.5 h-1.5 bg-straw rounded-full"></span> OREO CRUSH <span class="w-1.5 h-1.5 bg-straw rounded-full"></span> MANGO SORBET <span class="w-1.5 h-1.5 bg-straw rounded-full"></span> BLUE BUBBLE <span class="w-1.5 h-1.5 bg-straw rounded-full"></span></span>
+  </div>
+</div>
+
+<!-- MEET -->
+<section class="max-w-7xl mx-auto px-6 py-20 grid lg:grid-cols-2 gap-12 items-center">
+  <div class="reveal relative">
+    <div class="rounded-[28px] border-2 border-ink overflow-hidden rotate-[-1deg] shadow-[8px_8px_0_#17120F]"><img src="https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?w=800" class="w-full h-[460px] object-cover"></div>
+    <div class="absolute top-6 -right-6 bg-banana border-2 border-ink px-4 py-2 rounded-full rotate-[4deg] font-bold text-[11px] tracking-widest shadow-[3px_3px_0_#17120F]">80L FREEZER • 150 CONES • JBL + BUBBLES</div>
+  </div>
+  <div class="reveal">
+    <p class="text-straw font-jakarta font-extrabold text-[11px] tracking-[0.2em] uppercase">Built for chaos</p>
+    <h2 class="serif text-[36px] lg:text-[48px] leading-[0.95] mt-2">One truck. Built to survive a 40-kid queue.</h2>
+    <p class="mt-4 text-[15px] leading-7 text-ink/60">I'm not a catering company. I own the truck, I drive it, my cousin scoops. No call centre. You WhatsApp me, I pull up. We figured out the stuff parents actually stress about.</p>
+    <div class="mt-6 space-y-3 text-[13px]">
+      <p class="flex gap-2"><span class="hand text-[18px]">✓</span> We ask for address + gate code upfront so we don't get lost in Lynnwood</p>
+      <p class="flex gap-2"><span class="hand text-[18px]">✓</span> 80L freezer = no melting meltdown, even in Jan</p>
+      <p class="flex gap-2"><span class="hand text-[18px]">✓</span> Speaker + bubbles machine included — kids queue themselves</p>
+    </div>
+    <p class="hand text-[20px] mt-6 -rotate-1">— Actually replies within 15 min, not "soon" </p>
+  </div>
+</section>
+
+<!-- TICKETS -->
+<section class="bg-white border-y-2 border-ink py-16">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="flex justify-between items-end mb-8"><h2 class="serif text-[32px] lg:text-[44px] leading-[0.9]">Hire us for whatever needs <span class="hand text-straw">joy</span>.</h2><p class="hidden lg:block hand text-[18px] rotate-[-2deg]">you pick vibe, we pull up →</p></div>
+    <div class="grid lg:grid-cols-3 gap-6">
+      <div class="ticket rounded-[20px] p-6 rotate-[-1deg] lift reveal"><div class="flex justify-between"><span class="text-[10px] font-bold tracking-widest bg-ink text-cream px-2 py-1 rounded-full">BIRTHDAY</span><span class="hand">most booked</span></div><h3 class="serif text-[24px] mt-3">Birthday Mode</h3><p class="text-[13px] text-ink/60 mt-2">Kids queue, we scoop fast. Unlimited first hour. You actually enjoy the party.</p><p class="mt-4 font-jakarta font-extrabold">From R1,200 <span class="text-[11px] opacity-60">/ 2 hrs</span></p></div>
+      <div class="ticket rounded-[20px] p-6 rotate-[1.2deg] lift reveal bg-banana!border-ink border-2 shadow-[6px_6px_0_#17120F]" style="transition-delay:.08s"><div class="absolute -top-3 -right-3 bg-straw text-white text-[10px] font-bold px-3 py-1 rounded-full rotate-[8deg] border-2 border-ink">BEST VALUE</div><span class="text-[10px] font-bold tracking-widest bg-ink text-cream px-2 py-1 rounded-full">STREET</span><h3 class="serif text-[24px] mt-3">Street Party</h3><p class="text-[13px] text-ink/70 mt-2">We park, they come. 3 hrs, unlimited + music + bubbles. Whole street knows.</p><p class="mt-4 font-jakarta font-extrabold">R2,500</p></div>
+      <div class="ticket rounded-[20px] p-6 rotate-[-.8deg] lift reveal" style="transition-delay:.16s"><span class="text-[10px] font-bold tracking-widest bg-ink text-cream px-2 py-1 rounded-full">SCHOOL / CORPORATE</span><h3 class="serif text-[24px] mt-3">Bulk & Fast</h3><p class="text-[13px] text-ink/60 mt-2">Sports days, year-end, team days. 2 scoopers, 120 cones / hour. Invoice available.</p><p class="mt-4 font-jakarta font-extrabold">From R4,000</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY SCRAPBOOK -->
+<section class="max-w-7xl mx-auto px-6 py-20">
+  <h2 class="serif text-[32px] mb-10 reveal">Sweet moments, not stock photos</h2>
+  <div class="relative h-[520px] hidden lg:block reveal">
+    <div class="absolute left-0 top-0 w-[300px] bg-white border-2 border-ink p-2 rotate-[-3deg] shadow-[6px_6px_0_#17120F] lift cursor-pointer" onclick="openLb(this)"><img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=800" class="h-[200px] w-full object-cover"><p class="hand mt-2">Centurion — she said vanilla, took bubblegum 💅</p></div>
+    <div class="absolute left-[340px] top-6 w-[360px] bg-white border-2 border-ink p-2 rotate-[2deg] shadow-[6px_6px_0_#17120F] lift cursor-pointer" onclick="openLb(this)"><img src="https://images.unsplash.com/photo-1576506295286-5cda18df43e7?w=800" class="h-[260px] w-full object-cover"><p class="hand mt-2">Midrand wedding — groom had 3, bride said diet</p></div>
+    <div class="absolute right-[80px] top-0 w-[280px] bg-white border-2 border-ink p-2 rotate-[4deg] shadow-[6px_6px_0_#17120F] lift cursor-pointer" onclick="openLb(this)"><img src="https://images.unsplash.com/photo-1501443762994-82bd5dace89a?w=800" class="h-[180px] w-full object-cover"><p class="hand">Moreleta — 0 leftovers, 100% win</p></div>
+    <div class="absolute left-[80px] top-[300px] w-[260px] bg-white border-2 border-ink p-2 rotate-[3deg] shadow-[6px_6px_0_#17120F] lift cursor-pointer" onclick="openLb(this)"><img src="https://images.unsplash.com/photo-1560008581-09826d1de69e?w=800" class="h-[180px] w-full object-cover"><p class="hand">Hatfield school — queue was chaos, loved it</p></div>
+    <div class="absolute left-[400px] top-[340px] bg-ink text-cream px-5 py-3 rounded-full rotate-[-2deg] font-jakarta text-[12px]">+ 24 more on Instagram @sweetwheels.pta</div>
+  </div>
+  <div class="grid grid-cols-2 gap-4 lg:hidden">
+    <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=800" class="rounded-[18px] border-2 border-ink"><img src="https://images.unsplash.com/photo-1576506295286-5cda18df43e7?w=800" class="rounded-[18px] border-2 border-ink"><img src="https://images.unsplash.com/photo-1501443762994-82bd5dace89a?w=800" class="rounded-[18px] border-2 border-ink"><img src="https://images.unsplash.com/photo-1560008581-09826d1de69e?w=800" class="rounded-[18px] border-2 border-ink">
+  </div>
+</section>
+
+<!-- BOOKING - ORDER SLIP -->
+<section id="book" class="chalk text-cream py-20 rounded-t-[32px] border-t-2 border-ink">
+  <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12">
+    <div class="reveal">
+      <p class="text-banana font-jakarta font-bold tracking-[0.2em] text-[11px] uppercase">BOOKING — NO DM MAZE</p>
+      <h2 class="serif text-[40px] lg:text-[52px] leading-[0.9] mt-3">Hold your date in 60 sec. Pay after we confirm.</h2>
+      <p class="mt-4 text-cream/60 text-[14px] max-w-[420px]">We ask everything you'd ask on WhatsApp anyway — so I don't have to ask again. Date, address, how many kids, package. I reply on WhatsApp within 2 hrs.</p>
+      <div class="mt-8 space-y-3 text-[13px] font-inter">
+        <div class="flex gap-3"><span class="w-7 h-7 rounded-full bg-cream/10 flex items-center justify-center text-[12px]">1</span> We check calendar — Pretoria, Centurion, Midrand</div>
+        <div class="flex gap-3"><span class="w-7 h-7 rounded-full bg-cream/10 flex items-center justify-center text-[12px]">2</span> You pick package — no hidden "delivery fee"</div>
+        <div class="flex gap-3"><span class="w-7 h-7 rounded-full bg-cream/10 flex items-center justify-center text-[12px]">3</span> I confirm on WhatsApp — you pay only then</div>
+      </div>
+      <div class="mt-8 inline-flex items-center gap-2 bg-cream text-ink px-4 py-2 rounded-full text-[11px] font-bold rotate-[-1deg]">FOR OWNER: This filters time-wasters. Only serious bookings land in your WhatsApp.</div>
+    </div>
+    <div class="reveal bg-cream text-ink rounded-[24px] border-2 border-ink p-6 lg:p-8 shadow-[8px_8px_0_#FF4D6D] rotate-[.6deg]">
+      <div class="flex justify-between items-center border-b-2 border-dashed border-ink/20 pb-4 mb-4"><h3 class="font-jakarta font-extrabold text-[16px]">ORDER SLIP # — SWEET WHEELS</h3><span class="bg-mint border border-ink text-[10px] font-bold px-2 py-1 rounded-full">3 SLOTS LEFT THIS WEEK</span></div>
+      <div class="grid grid-cols-2 gap-4 mb-4">
+        <label class="block"><span class="text-[10px] font-bold tracking-widest">DATE</span><input type="date" class="mt-1 w-full border-2 border-ink rounded-xl px-3 py-2.5 text-[13px] outline-none focus:bg-banana/20"></label>
+        <label class="block"><span class="text-[10px] font-bold tracking-widest">KIDS</span><select class="mt-1 w-full border-2 border-ink rounded-xl px-3 py-2.5 text-[13px]"><option>20-40</option><option>40-80</option><option>80-150</option><option>150+ corporate</option></select></label>
+      </div>
+      <label class="block mb-4"><span class="text-[10px] font-bold tracking-widest">VENUE / ADDRESS + GATE CODE</span><input placeholder="e.g. 123 Lynnwood Rd, gate 4589*" class="mt-1 w-full border-2 border-ink rounded-xl px-3 py-2.5 text-[13px] outline-none"></label>
+      <p class="text-[10px] font-bold tracking-widest mb-2">PACKAGE — CIRCLE ONE</p>
+      <div class="space-y-2 mb-5">
+        <label class="flex justify-between items-center border-2 border-ink rounded-xl px-3 py-3 cursor-pointer"><span class="text-[13px]"><b>Basic</b> — 2hrs, 60 cones</span><span class="font-bold">R1,200</span><input type="radio" name="pkg"></label>
+        <label class="flex justify-between items-center border-2 border-ink bg-banana rounded-xl px-3 py-3 cursor-pointer shadow-[3px_3px_0_#17120F]"><span class="text-[13px]"><b>Party</b> — 3hrs unlimited + bubbles ⭐</span><span class="font-bold">R2,500</span><input type="radio" name="pkg" checked></label>
+        <label class="flex justify-between items-center border-2 border-ink rounded-xl px-3 py-3 cursor-pointer"><span class="text-[13px]"><b>Premium</b> — toppings bar, polaroids</span><span class="font-bold">R4,000</span><input type="radio" name="pkg"></label>
+      </div>
+      <button onclick="alert('🎉 Slip sent! Check WhatsApp — we reply within 2 hours.')" class="w-full bg-straw border-2 border-ink text-white py-3.5 rounded-full font-bold text-[14px] shadow-[4px_4px_0_#17120F] hover:translate-y-[1px] hover:shadow-[2px_2px_0_#17120F] transition">Hold My Date → WhatsApp</button>
+      <p class="text-center hand text-[15px] mt-3">no payment now • cancel free 48h before</p>
+    </div>
+  </div>
+</section>
+
+<section class="max-w-7xl mx-auto px-6 py-16">
+  <h2 class="serif text-[28px] mb-8 reveal">Parents who don't regret it</h2>
+  <div class="grid md:grid-cols-3 gap-6">
+    <div class="bg-white border-2 border-ink p-2 rotate-[-1deg] shadow-[5px_5px_0_#17120F] lift reveal"><div class="bg-[#F8F8F7] p-4"><p class="hand text-[18px] leading-6">“Pulled up exactly on time, kids went CRAZY! Easiest birthday ever. Moms still asking for your number.”</p><div class="mt-4 flex items-center gap-2"><img src="https://i.pravatar.cc/300?img=15" class="w-8 h-8 rounded-full border border-ink"><p class="text-[12px] font-bold">Naledi M. — Lynnwood</p></div></div></div>
+    <div class="bg-white border-2 border-ink p-2 rotate-[1deg] shadow-[5px_5px_0_#17120F] lift reveal" style="transition-delay:.08s"><div class="bg-[#F8F8F7] p-4"><p class="hand text-[18px] leading-6">“Corporate family day sorted. Branded napkins, fast queue, zero stress. Boss thinks I planned for weeks.”</p><div class="mt-4 flex items-center gap-2"><img src="https://i.pravatar.cc/300?img=32" class="w-8 h-8 rounded-full border border-ink"><p class="text-[12px] font-bold">James K. — Centurion</p></div></div></div>
+    <div class="bg-white border-2 border-ink p-2 rotate-[-.6deg] shadow-[5px_5px_0_#17120F] lift reveal" style="transition-delay:.16s"><div class="bg-[#F8F8F7] p-4"><p class="hand text-[18px] leading-6">“Wedding dessert truck was a HIT. Photos look insane. Guests still talk about it.”</p><div class="mt-4 flex items-center gap-2"><img src="https://i.pravatar.cc/300?img=12" class="w-8 h-8 rounded-full border border-ink"><p class="text-[12px] font-bold">Priya S. — Midrand</p></div></div></div>
+  </div>
+</section>
+
+<footer class="border-t-2 border-ink py-10 max-w-7xl mx-auto px-6">
+  <div class="flex flex-col lg:flex-row justify-between gap-6">
+    <div><p class="serif text-[18px]">SWEET WHEELS — PTA</p><p class="text-[12px] text-ink/60 mt-1 max-w-[320px]">The truck that pulls up with the party. No franchise, no call centre. Just ice cream.</p><p class="text-[11px] mt-3 font-bold">AREA: Pretoria • Centurion • Midrand • East Rand</p></div>
+    <div class="text-[12px]"><p>📞 080 000 0000 • 💬 WhatsApp • 📸 @sweetwheels.pta</p><p class="hand text-[14px] mt-1">Built by Pocket Launch — From Idea to Webapp 🍦</p></div>
+  </div>
+  <!-- ADMIN NOTE (hidden): Pocket Launch internal - Client greeting template stored in top comment. Do not display to customers. -->
+</footer>
+
+<div class="lg:hidden fixed bottom-3 left-3 right-3 z-30"><a href="#book" class="flex justify-center bg-straw border-2 border-ink text-white py-4 rounded-full font-bold shadow-[4px_4px_0_#17120F]">Book Truck — From R1,200</a></div>
+
+<div id="lb" class="fixed inset-0 bg-ink/80 z-50 hidden items-center justify-center p-6" onclick="this.classList.add('hidden')"><img id="lbImg" class="max-h-[85vh] rounded-[18px] border-2 border-cream"></div>
+
+<script>
+const texts=["Firing up the freezer...","Loading the sprinkles...","Tuning the jingle..."];let i=0;const lt=document.getElementById('lt');const iv=setInterval(()=>{i=(i+1)%texts.length;lt.style.opacity=0;setTimeout(()=>{lt.textContent=texts[i];lt.style.opacity=1},180)},750);
+setTimeout(()=>{clearInterval(iv);document.getElementById('loader').style.transition='opacity.5s';document.getElementById('loader').style.opacity=0;setTimeout(()=>document.getElementById('loader').remove(),500)},2200);
+const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')})},{threshold:.14});document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+function openLb(el){document.getElementById('lbImg').src=el.querySelector('img').src;document.getElementById('lb').classList.remove('hidden');document.getElementById('lb').classList.add('flex')}
+</script>
+</body>
+</html>
